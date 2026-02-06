@@ -37,16 +37,19 @@ export async function createTicketAction(prevState, formData) {
 }
 
 export async function closeTicketAction(formData) {
+  'use server';
   
   const ticketId = formData.get('ticketId');
+  const resolution = formData.get('resolution'); 
 
   try {
     await prisma.ticket.update({
       where: { 
-        id: parseInt(ticketId) // convert to int
+        id: parseInt(ticketId) 
       },
       data: { 
-        status: 'CHIUSO' 
+        status: 'CHIUSO',
+        resolution: resolution || 'Nessuna nota aggiuntiva.'
       }
     });
 
