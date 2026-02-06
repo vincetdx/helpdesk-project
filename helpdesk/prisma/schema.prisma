@@ -24,6 +24,7 @@ model Ticket {
   status      String   @default("APERTO") // APERTO, CHIUSO
   priority    String   @default("BASSA")
   createdAt   DateTime @default(now())
+  resolution  String?
   
   authorId    Int
   author      User     @relation(fields: [authorId], references: [id])
