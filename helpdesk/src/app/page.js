@@ -1,7 +1,7 @@
 'use client';
 
 import { useFormState } from 'react-dom';
-import { loginAction } from '@/actions/auth-actions';
+import { loginAction } from '@/actions/auth';
 
 export default function LoginPage() {
   const [state, action] = useFormState(loginAction, null);
