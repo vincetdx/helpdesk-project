@@ -1,11 +1,11 @@
 'use client';
 
-import { useFormState } from 'react-dom';
+import { useActionState } from 'react';
 import { createTicketAction } from '@/actions/ticket';
 import Link from 'next/link'; // tasto annulla
 
 export default function NewTicketPage() {
-  const [state, action] = useFormState(createTicketAction, null);
+  const [state, action] = useActionState(createTicketAction, null);
 
   return (
     <div className="max-w-2xl mx-auto">
