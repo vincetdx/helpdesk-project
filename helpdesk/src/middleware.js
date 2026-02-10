@@ -24,8 +24,3 @@ export async function middleware(request) {
 
   return NextResponse.next();
 }
-
-// esegui middleware su tutte le rotte except file static
-export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
-};
